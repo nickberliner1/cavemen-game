@@ -1,0 +1,51 @@
+body {
+    background: linear-gradient(blue, white);
+}
+
+#container {
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    vertical-align: center;
+    height: 100vh;
+}
+
+.cell {
+    display: inline-block;
+    background-color: white;
+    border: solid 1px black;
+    box-sizing: border-box;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.wall {
+   
+    background-color: black;
+    
+}
+
+.rock {
+    background-image: url(./images/rock.png);
+}
+
+.stick {
+    background-image: url(./images/stick.png);
+}
+
+.spear {
+    background-image: url(./images/spear.png);
+}
+
+.mammoth {
+    background-image: url(./images/mammoth.png);
+}
+
+.cavemanRed {
+    background-image: url(./images/caveman_red.png);
+}
+
+.cavemanBlue {
+    background-image: url(./images/caveman_blue.png);
+}
