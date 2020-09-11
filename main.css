@@ -1,51 +1,186 @@
 body {
-    background: linear-gradient(blue, white);
+    background-image: url(./images/forest.jpg);
+    display: flex;
 }
 
-#container {
-    width: 75%;
+#board {
+    width: 70%;
     text-align: center;
     margin: 0 auto;
     vertical-align: center;
-    height: 100vh;
+    height: 94vh;
+    float: right;
+    margin-top: 2vh;
+    margin-right: 3vh;
+    border: solid 3px #62562f;
+    border-radius: 5px;
+}
+
+#controllers {
+    width: 25%;
+    height: 98vh;
+    margin-top: 1vh;
+    margin-left: 3vh; 
+}
+
+.redController, .blueController {
+    background: #efeadd;
+    height: 46vh;
+    border: solid 3px #62562f;
+    border-radius: 15px;
+    margin-top: 1vh;
+}
+
+#button:hover {
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.25);
+    transition: 0.15s;
+    
+}
+
+progress[value] {
+    -webkit-appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: #e2d5aa;
+    border-radius: 4px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25) inset;
+    width: auto;
+}
+
+progress[value]::-webkit-progress-value {
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(right, green, red);
+} 
+
+.cavemanRedControllerPicture {
+    background-image: url(./images/caveman_red.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-basis: 150px;
+    height: 150px;
+}
+
+.cavemanBlueControllerPicture {
+    background-image: url(./images/caveman_blue.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    flex-basis: 150px;
+    height: 150px;
+}
+
+.pictureAndWeaponContainer, .attackAndDefendContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3vh;
+
+}
+
+.healthBarContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.cavemanRedAttack, .cavemanRedDefend, .cavemanBlueAttack, .cavemanBlueDefend {
+    /* margin-top: 7vh;
+    margin-left: 3vh; */
+    height: 6vh;
+    flex-basis: 20vh;
+    background-color: white;
+    border: solid 3px #3b331c;
+    border-radius: 5px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-size: 1.5em;
+    letter-spacing: .15em;
+    color: #3b331c;
+}
+
+#cavemanRedWeapon, #cavemanBlueWeapon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 100px;
+    flex-basis: 100px;
 }
 
 .cell {
     display: inline-block;
-    background-color: white;
-    border: solid 1px black;
+    background-color: #efeadd;
+    height: 100%;
+    border: solid 1px #62562f;
     box-sizing: border-box;
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    border-radius: 5px;
+}
+
+.possibleMove {
+    background-color: gray;
 }
 
 .wall {
-   
     background-color: black;
-    
+    background-image: url(./images/tree.jpg);
+}
+
+.defaultWeapon {
+    background-image: url(./images/rock_transparent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.fire {
+    background-image: url(./images/fire_transparent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .rock {
-    background-image: url(./images/rock.png);
+    background-image: url(./images/rock_transparent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .stick {
-    background-image: url(./images/stick.png);
+    background-image: url(./images/stick_transparent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .spear {
     background-image: url(./images/spear.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .mammoth {
-    background-image: url(./images/mammoth.png);
+    background-image: url(./images/mammoth_transparent.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .cavemanRed {
     background-image: url(./images/caveman_red.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .cavemanBlue {
     background-image: url(./images/caveman_blue.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
