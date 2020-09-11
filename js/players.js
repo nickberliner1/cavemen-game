@@ -6,7 +6,9 @@ export class Player {
         this.playerNumber = playerNumber;
         this.health = health;
         this.weapon = weapon;
-        
+        this.cell = null;
+        this.movement = 3;
+        this.defend = false;
     }
 }
 
