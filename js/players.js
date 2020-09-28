@@ -8,7 +8,6 @@ export class Player {
         this.weapon = weapon;
         this.cell = null;
         this.movement = 3;
-        this.defend = false;
     }
 }
 
