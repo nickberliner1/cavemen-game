@@ -14,6 +14,8 @@ body {
     margin-right: 3vh;
     border: solid 3px #62562f;
     border-radius: 5px;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.80) !important;
+
 }
 
 #controllers {
@@ -23,35 +25,20 @@ body {
     margin-left: 3vh; 
 }
 
-.redController, .blueController {
-    background: #efeadd;
+#cavemanRedController, #cavemanBlueController {
+    /* background: #efeadd; */
+    background-color: rgb(230, 230, 230);
+
     height: 46vh;
     border: solid 3px #62562f;
     border-radius: 15px;
     margin-top: 1vh;
 }
 
-#button:hover {
+button:hover {
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.25);
-    transition: 0.15s;
-    
+    transition: 0.15s;   
 }
-
-progress[value] {
-    -webkit-appearance: none;
-}
-
-progress[value]::-webkit-progress-bar {
-    background-color: #e2d5aa;
-    border-radius: 4px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25) inset;
-    width: auto;
-}
-
-progress[value]::-webkit-progress-value {
-    border-radius: 4px;
-    background-image: -webkit-linear-gradient(right, green, red);
-} 
 
 .cavemanRedControllerPicture {
     background-image: url(./images/caveman_red.png);
@@ -71,12 +58,19 @@ progress[value]::-webkit-progress-value {
     height: 150px;
 }
 
-.pictureAndWeaponContainer, .attackAndDefendContainer {
+.pictureAndWeaponContainer {
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 3vh;
+}
 
+#cavemanRedAttackAndDefendContainer, #cavemanBlueAttackAndDefendContainer {
+    visibility: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3vh;
 }
 
 .healthBarContainer {
@@ -84,7 +78,6 @@ progress[value]::-webkit-progress-value {
     justify-content: center;
     align-items: center;
 }
-
 
 .cavemanRedAttack, .cavemanRedDefend, .cavemanBlueAttack, .cavemanBlueDefend {
     /* margin-top: 7vh;
@@ -108,9 +101,19 @@ progress[value]::-webkit-progress-value {
     flex-basis: 100px;
 }
 
+#playerOneHealth, #playerTwoHealth {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow', sans-serif;
+    font-size: 1em;
+    letter-spacing: .05em;
+    color: #3b331c;
+
+}
+
 .cell {
     display: inline-block;
-    background-color: #efeadd;
+    /* background-color: #efeadd; */
+    background-color: rgb(230, 230, 230);
+
     height: 100%;
     border: solid 1px #62562f;
     box-sizing: border-box;
@@ -121,7 +124,8 @@ progress[value]::-webkit-progress-value {
 }
 
 .possibleMove {
-    background-color: gray;
+    background-color: rgb(158, 158, 158);
+    transition: .2s;
 }
 
 .wall {
@@ -183,4 +187,26 @@ progress[value]::-webkit-progress-value {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+/* .activePlayer {
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.80) !important;
+    border: solid 3px #36ad19 !important;
+    transition: 0.3s;
+} */
+
+.cavemanRedBoardColor {
+    border: solid 3px rgb(184, 0, 0) !important;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.80) !important;
+
+}
+
+.cavemanBlueBoardColor {
+    border: solid 3px rgb(4, 129, 231) !important;
+    border-radius: 5px;
+    transition: 0.3s;
+    box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.80) !important;
+
 }
