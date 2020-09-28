@@ -1,6 +1,7 @@
 # Cavemen Game
 
 Two player game built with OOP in ES6.
+[Live Demo](https://nickberliner1.github.io/cavemen-game)
 
 ## Game concepts
 The concept of the game is to have two players switch off turns, where they can only move up to 3 spaces and can be blocked by trees. Each player can pick up different weapons, but will drop whatever current weapon they have (they originally start with just rocks).
