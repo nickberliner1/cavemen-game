@@ -1,4 +1,5 @@
 import { Cell } from "./cell.js";
+import { players, showActivePlayerButtons } from "./app.js";
 
 export class Map {
     constructor(columns, rows) {
@@ -11,7 +12,6 @@ export class Map {
     generate(players, weapons) {
         this.buildMap();
         this.placeObjects(players, weapons, this.numberOfWalls);
-        
     }
     
     
@@ -75,6 +75,7 @@ export class Map {
         result.push(cells[0]);
         cells.splice(0, 1);
         
+        // Only pushes cells into empty array if they're not next to each other
         for (let i = 0; i < cells.length; i++) {
             if ( !cells[i].isNextTo(result[0]) ) {
                 result.push(cells[i]);
@@ -109,7 +110,6 @@ export class Map {
         for (let i = 0; i < weapons.length; i++) {
             cells[i].div.addClass(weapons[i].weaponPicture);
             cells[i].weapon = weapons[i];
-            
         }
     }
     
@@ -167,20 +167,20 @@ export class Map {
             cell.div.on("click", () => {
                 $('.possibleMove').removeClass('possibleMove').off("click");
                 this.movePlayer(player, cell);
-                                
+
+                players.changeActivePlayers();
 
                 if ( player.cell.isNextTo(nextPlayer.cell) ) {
                     this.startFight();
                 } else {
                     this.displayPlayerMoves(nextPlayer, player);
                 }
-
             })
         }
     }
-    
-    
+
     movePlayer(player, cell) {
+        
         let oldPlayerCell = player.cell;
         let newPlayerCell = cell;
         
@@ -194,9 +194,6 @@ export class Map {
             this.pickupWeapon(player, cell);
         }
     }
-    
-    
-    
 
     pickupWeapon(player, cell) {
         let oldPlayerWeapon = player.weapon;
@@ -210,29 +207,12 @@ export class Map {
         $(`#${player.playerPicture}Weapon`).removeClass(oldPlayerWeapon.weaponPicture);
         $(`#${player.playerPicture}Weapon`).addClass(newPlayerWeapon.weaponPicture).css("float: left;");
     
-        
     }
     
-    startFight(player, otherPlayer) {
+    startFight() {
         
         alert("Start Fight!");
-
-        $('cavemanRedAttack').on("click", () => {
-
-            $('cavemanRedAttack').toggle();
-            $('cavemanRedDefend').toggle(); 
-
-            
-        }) 
-    }
-
-    attack(player, otherPlayer) {
-        if ( this.defend(otherPlayer) == true ) {
-            player.health -= player.weapon.damage / 2;
-        } else {
-            player.health -= player.weapon.damage;
-        }
-    }
-    
-    
+        players.showHealth();
+        showActivePlayerButtons();
+    }    
 }
