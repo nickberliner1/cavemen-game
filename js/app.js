@@ -67,10 +67,7 @@ export const players = {
     
 }
 
-
-
-
-// Function that changes players urn after clicking either attack or defend
+// Function that changes players turn after clicking either attack or defend
 $('button').on("click", () => {
     players.changeActivePlayers();
     showActivePlayerButtons();
