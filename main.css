@@ -15,7 +15,6 @@ body {
     border: solid 3px #62562f;
     border-radius: 5px;
     box-shadow: 5px 5px 20px 5px rgba(0, 0, 0, 0.80) !important;
-
 }
 
 #controllers {
@@ -28,7 +27,6 @@ body {
 #cavemanRedController, #cavemanBlueController {
     /* background: #efeadd; */
     background-color: rgb(230, 230, 230);
-
     height: 46vh;
     border: solid 3px #62562f;
     border-radius: 15px;
